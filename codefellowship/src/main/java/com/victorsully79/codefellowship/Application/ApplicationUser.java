@@ -1,4 +1,4 @@
-package com.victorsully79.codefellowship;
+package com.victorsully79.codefellowship.Application;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -10,7 +10,7 @@ import java.util.Collection;
 import javax.persistence.*;
 
 @Entity
-public class FellowShipManager implements UserDetails {
+public class ApplicationUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -19,6 +19,10 @@ public class FellowShipManager implements UserDetails {
 
     String username;
     String password;
+    String firstName;
+    String lastName;
+    String dateOfBirth;
+    String bio;
 
     public void setUsername(String username){
         this.username = username;
@@ -68,5 +72,6 @@ public class FellowShipManager implements UserDetails {
     @Override
     public boolean isEnabled(){
         return true;
+
     }
 }
